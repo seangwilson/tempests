@@ -364,6 +364,9 @@ body {
   min-width: 30%;
 }
 
+.member-card a {
+  color: var(--primary-color-dark);
+}
 .member-info {
   margin-bottom: 10px;
   display: flex;
