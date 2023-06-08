@@ -1,0 +1,545 @@
+/* Include Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --primary-color-dark: #27292a;
+  --primary-color-light: #fffafa;
+  --accent-color-mid: #51bbfe;
+  --accent-color-light: #ebf7ff;
+  --accent-color-dark: #0197f4;
+  --death-knight: #c41f3b;
+  --demon-hunter: #a330c9;
+  --druid: #ff7d0a;
+  --evoker: #33937f;
+  --hunter: #abd473;
+  --mage: #69ccf0;
+  --monk: #00ff96;
+  --paladin: #f58cba;
+  --priest: #ffffff;
+  --rogue: #fff569;
+  --shaman: #0070de;
+  --warlock: #9482c9;
+  --warrior: #c79c6e;
+}
+
+/* CSS Reset */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default font styles */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove underline from links */
+a {
+  text-decoration: none;
+}
+
+/* Set default color and background */
+body {
+  color: var(--primary-color-dark);
+  background-color: var(--primary-color-light);
+}
+
+/* Add any additional custom styles or overrides below */
+
+/* Apply font styles */
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Notable';
+  /* Add any additional heading styles here */
+}
+
+/* Body text styles */
+body {
+  font-family: 'Montserrat';
+  /* Add any additional body text styles here */
+}
+
+/* CSS for Browser Navbar */
+
+/* Default navbar styles */
+.navbar {
+  background-color: var(--primary-color-dark);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Default navbar logo styles */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color-light);
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Default navbar logo image styles */
+.navbar-logo img {
+  height: 100px; /* Adjust the height as needed */
+  margin-right: 10px; /* Add margin between the logo image and the navbar logo text */
+}
+
+/* Default navbar menu styles */
+.navbar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Default navbar menu items styles */
+.navbar-menu li {
+  display: inline-block;
+  padding: 10px;
+}
+
+/* Default navbar menu links styles */
+.navbar-menu li a {
+  color: var(--primary-color-light);
+  text-decoration: none;
+}
+
+/* CTA button styles */
+.navbar-cta-button {
+  background-color: var(--accent-color-mid);
+  color: var(--primary-color-light);
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-shadow: 1px 1px 5px #333;
+}
+
+.navbar-cta-button:hover {
+  background-color: var(--accent-color-dark);
+}
+
+/* Media query for smaller screen sizes (mobile) */
+@media screen and (max-width: 860px) {
+  /* Show the toggle box */
+  #navbar-toggle {
+    display: none;
+  }
+
+  /* Hide the navbar menu by default */
+  .navbar-menu {
+    display: none;
+  }
+
+  /* Show the navbar menu when the toggle box is checked */
+  #navbar-toggle:checked ~ .navbar-menu {
+    display: block;
+  }
+
+  /* Reset the default navbar menu styles */
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color-dark);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  /* Reset the default navbar menu items styles */
+  .navbar-menu li {
+    padding: 10px;
+  }
+
+  /* Reset the default navbar menu links styles */
+  .navbar-menu li a {
+    color: var(--primary-color-light);
+    text-decoration: none;
+  }
+
+  /* Style the toggle box as a menu icon */
+  .navbar-toggle-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* Style the bars icon */
+  .navbar-toggle-icon .fa-bars {
+    font-size: 40px;
+    padding-right: 16px;
+    color: var(--primary-color-light);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+  }
+
+  /* Style the times icon */
+  .navbar-toggle-icon .fa-times {
+    font-size: 40px;
+    padding-right: 16px;
+    color: var(--primary-color-light);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+    display: none; /* Hide the times icon by default */
+  }
+
+  /* Show the times icon when the toggle box is checked */
+  #navbar-toggle:checked ~ .navbar-toggle-icon .fa-bars {
+    display: none;
+  }
+
+  /* Show the bars icon when the toggle box is checked */
+  #navbar-toggle:checked ~ .navbar-toggle-icon .fa-times {
+    display: block;
+  }
+}
+
+/* Media query for larger screen sizes (desktop) */
+@media screen and (min-width: 861px) {
+  /* Hide the toggle box */
+  #navbar-toggle, .fa-times, .fa-bars {
+    display: none;
+  }
+  
+  /* Reset the default display for the navbar menu */
+  .navbar-menu {
+    display: block !important;
+  }
+}
+
+/* Font Awesome icons */
+.fas {
+  font-family: 'FontAwesome';
+}
+
+.fa-bars:before {
+  content: "\f0c9";
+}
+
+.fa-times:before {
+  content: "\f00d";
+}
+
+/* Footer styles */
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.hero {
+  background-image: url(img/FenrisWolfBanner_Final.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 5px #333;
+}
+
+.hero-content {
+  padding: 32px;
+  text-align: center;
+  color: var(--primary-color-light);
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-content a {
+  color: var(--primary-color-light);
+  font-weight: 700;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.current-progress:hover {
+  color: var(--accent-color-mid);
+  transition: .3s;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent-color-mid);
+  color: var(--primary-color-light);
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 5px #333;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color-dark);
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 860px) {
+  .hero {
+    background-position: 85% center;
+  }
+}
+
+/* Members section */
+.members-section {
+  padding: 20px;
+  padding-top: 150px;
+  text-align: center;
+  background-color: var(--accent-color-light);
+}
+
+.members-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.members-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member-card {
+  background-color: var(--primary-color-light);
+  margin: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #333;
+  min-width: 30%;
+}
+
+.member-info {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-name {
+  margin: 0;
+  margin-right: 10px;
+  text-shadow: 1px 1px 2px #333;
+}
+
+.member-icons img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.links a:last-child {
+  margin-right: 0;
+}
+
+.raider-icon {
+  width: 100px;
+}
+
+.raider-icon-card {
+  width: 50px;
+}
+
+.death-knight {
+  color: var(--death-knight)
+}
+
+.demon-hunter {
+  color: var(--demon-hunter)
+}
+.druid {
+  color: var(--druid)
+}
+
+.evoker {
+  color: var(--evoker)
+}
+
+.hunter {
+  color: var(--hunter)
+}
+
+.mage {
+  color: var(--mage)
+}
+
+.monk {
+  color: var(--monk)
+}
+
+.paladin {
+  color: var(--paladin)
+}
+
+.priest {
+  color: var(--priest)
+}
+
+.rogue {
+  color: var(--rogue)
+}
+
+.shaman {
+  color: var(--shaman)
+}
+
+.warlock {
+  color: var(--warlock)
+}
+
+.warrior {
+  color: var(--warrior)
+}
+
+@media screen and (max-width: 860px) {
+  .member-card {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Raids Section formatting */
+.raids-section {
+  text-align: center;
+  padding: 20px;
+  padding-top: 150px;
+  background-color: var(--primary-color-light);
+}
+
+.raids-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.raids-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.raid-card {
+  width: 1280px;
+  height: 350px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+  perspective: 1000px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px #333;
+}
+
+.raid-card-front {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: right;
+  padding: 20px 35px;
+}
+
+.card-content {
+  text-align: right;
+  color: var(--primary-color-light);
+  text-shadow: 2px 2px 5px #333;
+}
+
+h3,
+p {
+  margin: 5px 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 860px) {
+  .raid-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .raid-card-front {
+    transform: none;
+    position: static;
+    padding: 2px 15px;
+    justify-content: left;
+  }
+
+  .card-content {
+    text-align: left;
+  }
+}
